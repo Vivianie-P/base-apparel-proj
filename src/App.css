@@ -1,38 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
 .App {
-  text-align: center;
+	height: 100vh;
+	width: 100vw;
+	background-color: hsl(0, 0%, 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.info-and-photo {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.description {
+	width: 60%;
+	height: 100vh;
+}
+
+.header {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40px;
+	pointer-events: none;
+	margin: 90px 300px 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+	display: flex;
+	flex-direction: column;
+	font-size: 3.6rem;
+	text-align: left;
+	margin: 150px 300px 50px;
+	max-width: 657px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title-pt1 {
+	color: hsl(0, 36%, 70%);
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 300;
+	margin: 0px;
+	display: flex;
+	letter-spacing: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+.title-pt2 {
+	color: hsl(0, 6%, 24%);
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 600;
+	margin: 0px;
+	display: flex;
+	letter-spacing: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.paragraph {
+	color: hsl(0, 36%, 70%);
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+	font-size: 1.57rem;
+	text-align: left;
+	margin: 50px 300px 50px;
+	width: 900px;
+	line-height: 35px;
+	max-width: 677px;
+}
+
+.input-container {
+	border: 1px solid hsl(0, 36%, 70%);
+	border-radius: 50px;
+	height: 70px;
+	width: 670px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px 300px;
+}
+
+.input-container-error {
+	border: 2px solid hsl(0, 93%, 68%);
+	border-radius: 50px;
+	height: 70px;
+	width: 670px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px 300px;
+}
+
+.email-input {
+	border: none;
+	height: 40px;
+	width: 360px;
+	display: flex;
+	align-items: center;
+	background: none;
+	margin: 0px 20px;
+	font-size: 1.5rem;
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+	color: hsl(0, 36%, 70%);
+}
+
+.email-input:focus {
+	outline: none;
+}
+
+::placeholder {
+	color: hsl(0, 36%, 70%);
+	font-size: 1.3rem;
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+}
+
+.alertIcon {
+	color: hsl(0, 93%, 68%);
+	height: 30px;
+	width: 30px;
+}
+
+.email-btn {
+	border: 0.5px solid;
+	border-left: none;
+	border-color: hsl(0, 36%, 70%);
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	border-radius: 50px;
+	height: 75px;
+	width: 125px;
+	cursor: pointer;
+	font-size: 30px;
+	color: white;
+	transition-duration: 0.3s;
+	-webkit-box-shadow: 0px 16px 43px 12px rgba(245, 204, 204, 0.71);
+	box-shadow: 0px 16px 43px 12px rgba(245, 204, 204, 0.71);
+}
+
+.email-btn:hover {
+	background: rgb(243, 214, 214);
+	transform: scale(1.2);
+	-webkit-box-shadow: 0px 13px 41px 6px rgba(242, 181, 181, 0.75);
+	box-shadow: 0px 13px 41px 6px rgba(242, 181, 181, 0.75);
+}
+
+.errorMessage {
+	width: 670px;
+	display: flex;
+	justify-content: flex-start;
+	font-size: 1.3rem;
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+	color: hsl(0, 36%, 70%);
+	margin: 0px 320px;
+	padding-top: 20px;
+}
+
+.images-container,
+.desktop-image-container {
+	height: 100%;
+	width: 100%;
+}
+
+.desktop-image {
+	width: 100%;
+	height: 100%;
+}
+
+.mobile-image-container {
+	display: none;
+}
+
+@media screen and (max-width: 1800px) {
+	.App-logo {
+		margin: 90px 100px 25px;
+		height: 30px;
+	}
+
+	.title {
+		margin: 150px 100px 50px;
+		font-size: 2.5rem;
+	}
+
+	.paragraph {
+		margin: 50px 100px 50px;
+		font-size: 20px;
+		max-width: 550px;
+	}
+
+	.input-container-error {
+		height: 60px;
+		margin: 0px 100px;
+		width: 600px;
+	}
+
+	.input-container,
+	.errorMessage {
+		margin: 0px 100px;
+		width: 600px;
+	}
+
+	.email-btn {
+		height: 70px;
+		width: 118px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.info-and-photo {
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
+	.App-logo {
+		pointer-events: none;
+		height: 30px;
+		margin: 40px 100px 50px 10px;
+	}
+
+	.description {
+		width: 100%;
+		height: 100vh;
+	}
+
+	.title {
+		margin: 80px 60px 0px;
+		font-size: 1.3rem;
+		text-align: center;
+		display: flex;
+		align-items: center;
+	}
+
+	.title-pt1 {
+		letter-spacing: 12px;
+	}
+
+	.title-pt2 {
+		letter-spacing: 12px;
+	}
+
+	.paragraph {
+		margin: 0px 10px 30px;
+		width: 350px;
+		text-align: center;
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		height: 170px;
+		color: hsl(0, 36%, 70%);
+		font-family: "Josefin Sans", sans-serif;
+		font-weight: 600;
+	}
+
+	.input-container {
+		height: 60px;
+		width: 350px;
+		margin: auto;
+		display: flex;
+	}
+
+	.email-btn {
+		height: 60px;
+		width: 150px;
+		font-size: 27px;
+	}
+
+	.images-container {
+		width: 100%;
+		height: 10%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.desktop-image-container {
+		display: none;
+	}
+
+	.mobile-image-container {
+		display: flex;
+		width: 100%;
+	}
+
+	.mobile-image {
+		height: 250px;
+		width: 375px;
+	}
 }
